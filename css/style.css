@@ -1,5 +1,112 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --brand-color: #e88718;
+    --background-color: #5a3914;
+    --surface-color: #73430B;
+    --skeleton-color: #d9d9d9;
+    --shape-transparency: #ffffff70;
+    --text-color-primary: #C47214;
+    --text-color-secondary: #6c6c6c;
+
+    --font-family: "poppins", sans-serif;
+    --text-lg: bold 24px/125% var(--font-family);
+    --text-lg: bold 24px/125% var(--font-family);
+    --text: 16px/150% var(--font-family);
+    --text-md: 14px/170% var(--font-family);
+    --text-sm: 12px/170% var(--font-family);
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color-secondary);
+    background-color: var(--surface-color);
+}
+
+.container {
+    padding-inline: 2rem;
+    margin-inline: auto;
+    max-width: 90rem;
+}
+
+a {
+    font: var(--text-lg);
+    color: var(--text-color-primary);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--brand-color);
+}
+
+h1 {
+    color: var(--brand-color);
+}
+
+h2 {
+    font: bold 32px/125% var(--font-family);
+    ;
+    color: var(--brand-color);
+}
+
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    line-height: 0;
+    padding-block: 1.25rem;
+
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    padding-block: 0.5rem;
+}
+
+
+.second-background {
+    background-color: var(--background-color);
+}
+
+/* seçao problema  */
+.problema {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 2rem;
+    font: var(--text-md);
+}
+
+.problema {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 2rem;
+    font: var(--text-md);
+    padding-top: 7%;
+    margin-top: 0.5%;
+}
+
+.problema img {
+    max-width: 20rem;
+}
+
+.texto {
+    padding-inline: 50rem;
+    margin-inline: auto;
+    max-width: 80rem;
 }

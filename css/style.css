@@ -100,6 +100,7 @@ nav ul {
 
 .topico-inverso img {
     max-width: 19rem;
+    border: wheat solid 2px;
 }
 
 .texto {

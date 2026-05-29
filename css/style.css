@@ -98,6 +98,10 @@ nav ul {
     max-width: 20rem;
 }
 
+.topico-inverso img {
+    max-width: 19rem;
+}
+
 .texto {
     display: block;
     align-items: center;
@@ -115,9 +119,5 @@ nav ul {
     margin-top: 0.5%;
     display: flex;
     justify-content: center;
-    
-}
 
-.topico-inverso img {
-    max-width: 19rem;
 }

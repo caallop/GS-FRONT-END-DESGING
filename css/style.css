@@ -12,7 +12,7 @@
     --skeleton-color: #d9d9d9;
     --shape-transparency: #ffffff70;
     --text-color-primary: #C47214;
-    --text-color-secondary: #6c6c6c;
+    --text-color-secondary: #969393;
 
     --font-family: "poppins", sans-serif;
     --text-lg: bold 24px/125% var(--font-family);
@@ -83,30 +83,41 @@ nav ul {
 }
 
 /* seçao problema  */
-.problema {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 2rem;
-    font: var(--text-md);
-}
 
-.problema {
+.topico {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-block: 2rem;
     font: var(--text-md);
-    padding-top: 7%;
+    padding-top: 2%;
     margin-top: 0.5%;
 }
 
-.problema img {
+.topico img {
     max-width: 20rem;
 }
 
 .texto {
-    padding-inline: 50rem;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 30rem;
     margin-inline: auto;
-    max-width: 80rem;
+    min-width: 100%;
+}
+
+.topico-inverso {
+    margin-right: 33%;
+    padding-block: 2rem;
+    font: var(--text-md);
+    padding: 2%;
+    margin-top: 0.5%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.topico-inverso img {
+    max-width: 19rem;
 }

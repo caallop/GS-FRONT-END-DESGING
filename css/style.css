@@ -114,3 +114,15 @@ nav ul {
     object-fit: cover;
 
 }
+
+/* footer */
+
+footer {
+    background-color: var(--footer-background);
+}
+
+.novidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

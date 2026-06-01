@@ -53,7 +53,7 @@ h1 {
 
 h2 {
     font: bold 32px/125% var(--font-family);
-    ;
+    
     color: var(--brand-color);
 }
 
@@ -109,7 +109,6 @@ nav ul {
     border-radius: 18px;
     width: 100%;
     max-width: 24rem;
-    /* Ajuste o tamanho máximo da imagem aqui se preferir */
     height: auto;
     object-fit: cover;
 
@@ -122,7 +121,57 @@ footer {
 }
 
 .novidade {
+    
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1%;
+}
+
+.novidade h2{
+    letter-spacing: -0.5px;
+    padding: 5px;
+}
+
+.novidade p{
+    padding: 10px;
+}
+
+.formulario{
+  display: flex;
+  gap: 15px; 
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.gmail {
+    flex: 1; 
+  background: transparent; 
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px; 
+  color: #ffffff;
+  padding: 14px 16px;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.4s ease;
+}
+
+.gmail:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+.gmail::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+.nomes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    list-style-type: none;
+    padding-bottom: 30px;
 }

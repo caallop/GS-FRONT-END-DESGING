@@ -20,6 +20,7 @@
 }
 
 body {
+    padding-top: 80px;
     font-family: var(--font-family);
     color: var(--text-color-secondary);
     background-color: var(--surface-color);
@@ -53,7 +54,7 @@ h1 {
 
 h2 {
     font: bold 32px/125% var(--font-family);
-    
+
     color: var(--brand-color);
 }
 
@@ -75,6 +76,20 @@ nav ul {
 
     padding-block: 0.5rem;
 }
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: var(--background-color);
+
+    z-index: 1000;
+
+    border-bottom: 8px solid var(--surface-color);
+}
+
 
 
 .second-background {
@@ -102,7 +117,7 @@ nav ul {
 
 }
 
-
+/* IMAGENS */
 .topico img,
 .topico-inverso img {
     border: var(--brand-color) solid 3px;
@@ -111,7 +126,13 @@ nav ul {
     max-width: 24rem;
     height: auto;
     object-fit: cover;
+    transition: .3s;
 
+}
+
+.topico img:hover,
+.topico-inverso img:hover {
+    transform: scale(1.05);
 }
 
 /* footer */
@@ -121,7 +142,7 @@ footer {
 }
 
 .novidade {
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,41 +150,41 @@ footer {
     padding: 1%;
 }
 
-.novidade h2{
+.novidade h2 {
     letter-spacing: -0.5px;
     padding: 5px;
 }
 
-.novidade p{
+.novidade p {
     padding: 10px;
 }
 
-.formulario{
-  display: flex;
-  gap: 15px; 
-  margin-bottom: 12px;
-  width: 100%;
+.formulario {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    width: 100%;
 }
 
 .gmail {
-    flex: 1; 
-  background: transparent; 
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 4px; 
-  color: #ffffff;
-  padding: 14px 16px;
-  font-size: 1.1rem;
-  outline: none;
-  transition: border-color 0.4s ease;
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.4s ease;
 }
 
 .gmail:focus {
-  border-color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 
 .gmail::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 

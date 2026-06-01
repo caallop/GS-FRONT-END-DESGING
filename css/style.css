@@ -216,6 +216,13 @@ footer {
     width: 100%;
 }
 
+form button{
+    padding: 4px;
+    border-radius: 8px;
+    background-color: var(--brand-color);
+    border: var(--brand-color) solid 3px;
+}
+
 .gmail {
     flex: 1;
     background: transparent;

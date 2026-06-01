@@ -89,7 +89,64 @@ nav ul {
     background-color: var(--background-color);
 }
 
-/* seçao problema  */
+/* header */
+
+header {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+header h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+header p:first-of-type {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+}
+
+header p:last-of-type {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    color: var(--skeleton-color);
+    margin-bottom: 2rem;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header button {
+    background-color: var(--brand-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+header button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+
+/* seção da main */
 
 .topico,
 .topico-inverso {
@@ -115,7 +172,7 @@ nav ul {
 .topico-inverso img {
     border: var(--brand-color) solid 3px;
     border-radius: 18px;
-    width: 100%;
+    width: 85%;
     max-width: 24rem;
     height: auto;
     object-fit: cover;
@@ -198,7 +255,7 @@ footer {
 
     nav {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.8rem;
         text-align: center;
         border-bottom: 1px solid var(--surface-color);
         padding-bottom: 10px;
@@ -211,7 +268,29 @@ footer {
     }
 
     nav ul a {
+        font-size: 0.9rem;
+    }
+
+    header {
+        min-height: 70vh;
+        padding: 2rem 1rem;
+    }
+
+    header h2 {
+        font-size: 3rem;
+    }
+
+    header p:first-of-type {
+        font-size: 1.3rem;
+    }
+
+    header p:last-of-type {
         font-size: 1rem;
+    }
+
+    header button {
+        width: 100%;
+        max-width: 300px;
     }
 
     .topico,
@@ -234,16 +313,16 @@ footer {
     .topico img,
     .topico-inverso img {
         max-width: 100%;
-        width: 100%;
         height: auto;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 3rem;
+        color: #f99135;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     p {
@@ -265,7 +344,7 @@ footer {
 
     .nomes {
         text-align: center;
-        gap: .5rem;
+        gap: 0.5rem;
     }
 
 }

@@ -1,1 +1,1 @@
-https://caallop.github.io/GS-FRONT-END-DESGING/
+https://caallop.github.io/gs-front-end-design/

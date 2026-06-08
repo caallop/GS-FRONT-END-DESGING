@@ -172,7 +172,7 @@ function verificarResposta(indexSelecionado){
         botoes[correta].style.backgroundColor = "#2a9d8f";
         botoes[correta].style.borderColor="#2a9d8f";
 
-        // Garante que o texto continue branco e visível sobre o verde/vermelho
+        // Para o texto continuar branco e visível sobre o verde/vermelho
         botoes[indexSelecionado].style.color = '#ffffff';
         botoes[correta].style.color = '#ffffff';
     };
@@ -199,3 +199,70 @@ function mostrarResultado(){
 };
 
 carregarPerguntas();
+
+//SlideShow
+//Linkar com html
+const carrossel = document.getElementById("slides-carrossel");
+const slides = document.querySelectorAll(".slide");
+const antesBtn = document.getElementById("antesBtn");
+const depoisBtn = document.getElementById("depoisBtn");
+
+//contador
+let contSlide = 0;
+
+//função responsável por exibir o slide correto e escnder os outros
+function slideShow(index){
+    
+    //Lógica para o loop do carrossel
+    if(index>=slides.length){
+        contSlide = 0; //se passar da última volta para a primeira
+    }else if(index<0){
+        contSlide = slides.length -1; //se for menor que zero, vai para a ultima
+    }else{
+        contSlide = index; //caso contrário segue o fluxo normal
+    }
+    
+    //move o slide
+    const deslocamento = -contSlide * 100;
+    carrossel.style.transform = `translateX(${deslocamento}%)`;
+}
+
+//Eventos de clique nos botões
+depoisBtn.addEventListener("click",()=>{
+    slideShow(contSlide+1); //avança 1 slide
+});
+
+antesBtn.addEventListener("click",()=>{
+    slideShow(contSlide-1); //volta 1 slide
+})
+
+slideShow(contSlide);
+
+//Mudar cor de fundo
+//Array de cores
+const cores = ["#401717","#372400","#291f3b"];
+let mudarContador = 0;
+
+//linkar com html
+const botaoMudarCor = document.getElementById("btnMudar");
+
+botaoMudarCor.addEventListener("click", ()=>{
+    mudarContador++;
+
+    //se passar de 3 cliques, reinicia
+    if(mudarContador > 3){
+        //teve que colocar contador igual a 1 porque estava dando bug, ficando na mesma cor com dois cliques
+        mudarContador = 1;
+    }
+
+    if (mudarContador === 1){
+        //vai para a segunda cor
+        document.documentElement.style.setProperty("--background-color", cores[1]);
+    } else if (mudarContador==2){
+     //muda para terceira cor
+     document.documentElement.style.setProperty("--background-color", cores[2]);
+    }else{
+        //volta para a cor original
+        document.documentElement.style.setProperty("--background-color", cores[0]);
+    }
+});

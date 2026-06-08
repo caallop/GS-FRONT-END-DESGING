@@ -361,3 +361,222 @@ form button{
     }
 
 }
+
+/* Container Principal do Quiz */
+#quiz-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #733224;
+  border: 2px solid #D9814E;
+  border-radius: 12px;
+  color: #F2B47E;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Título do Quiz */
+#quiz-container h2 {
+  color:#F2B47E;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #D9814E;
+  padding-bottom: 15px;
+}
+
+/* Texto da Pergunta Atual */
+#pergunta-atual {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #F2B47E;
+}
+
+/* Container das Opções */
+#opcoes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Botões de Opção */
+.btn-opcao {
+  background-color: transparent;
+  color: #F2B47E;
+  border: 1px solid #D9814E;
+  padding: 14px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+/* Efeito Hover nas Opções */
+.btn-opcao:hover:not(:disabled) {
+  background-color:#D9814E;
+  color:#401717;
+}
+
+/* Desabilitado (Depois de responder) */
+.btn-opcao:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Botão de Próxima Pergunta */
+#btn-proxima {
+  width: 100%;
+  background-color:#F2B47E;
+  color: #401717;
+  border: none;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: opacity 0.2s ease;
+}
+
+#btn-proxima:hover {
+  opacity: 0.9;
+}
+
+/* Tela de Resultado Final */
+#resultado-final {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#resultado-final h3 {
+  color: #F2B47E;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+#resultado-final p {
+  font-size: 1.2rem;
+  color:  #D9814E;
+}
+
+/*  RESPONSIVIDADE */
+@media (max-width: 600px) {
+  #quiz-container {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  #quiz-container h2 {
+    font-size: 1.3rem;
+  }
+
+  #pergunta-atual {
+    font-size: 1.1rem;
+  }
+
+  .btn-opcao {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Container SlideShow*/
+.slideshow-container{
+    width: 100%;
+    position:relative;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+/* Esconder slides*/
+
+.slide{
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+/*Coloca todos os slides em uma única linha comprida */
+.slides-carrossel {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* efeito escorregando*/
+}
+.slide img{
+    width: 100%;
+    display: block;
+    height: 500px;
+    object-fit: cover;
+}
+
+/*Estilo dos botões*/
+.btn-nav{
+    cursor:pointer;
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    width:auto;
+    padding:16px;
+    color:#401717;
+    font-size:20px;
+    border:none;
+    background-color:#D9814E;
+    z-index: 10; /* Garante que os botões fiquem na frente das imagens que estão deslizando */
+    border-radius:0 5px 5px 0;
+}
+
+.antes{
+    left:0;
+    border-radius:0 5px 5px 0;
+}
+
+.depois{
+    right:0;
+    border-radius:5px 0 0 5px;
+}
+
+.btn-nav:hover{
+    background-color:#F2B47E;
+}
+
+/*botão de mudar de cor*/
+#btnMudar {
+    /* Reset de botão porque esta com conflito*/
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent !important;
+    border: 2px solid #D9814E !important; 
+    box-shadow: none;
+    outline: none;
+    
+    /* Cores e Fonte */
+    color: #F2B47E !important; 
+    font-family: var(--font-family) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    text-transform: none;
+    
+    /* Tamanho e Forma */
+    padding: 10px 24px !important;
+    border-radius: 6px !important;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out !important;
+    
+    /*Alinhamento no Menu*/
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+#btnMudar:hover {
+    background-color: #D9814E !important; /* Fundo laranja do quiz */
+    color: #401717 !important; /* Texto marrom escuro */
+    border-color: #D9814E !important;
+}

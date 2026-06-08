@@ -41,6 +41,9 @@
                 <li>
                     <a href="#quiz">Quiz</a>
                 </li>
+                <li>
+                    <button id="btnMudar">Mudar Cor</button>
+                </li>
             </ul>
         </nav>
     </div>
@@ -60,6 +63,25 @@
         </header>
     </div>
     <main>
+           <div class="slideshow-container">
+            <div class="slides-carrossel" id="slides-carrossel">
+                <div class="slide">
+                    <img src="./img/aplicacao.png"
+                        alt="Monitor de computador exibindo o mapa de monitoramento da América do Sul ao lado de uma miniatura física do satélite sobre uma mesa de escritório.">
+                </div>
+                <div class="slide">
+                    <img src="./img/beneficios.png"
+                        alt="Tela de um painel digital exibindo um globo terrestre holográfico cercado por gráficos e métricas de monitoramento.">
+                </div>
+                <div class="slide">
+                    <img src="./img/objetivo.png"
+                        alt="Modelo digital do microssatélite em órbita com gráficos táteis e dados analíticos sobrepostos na tela.">
+                </div>
+            </div>
+            <button class="btn-nav antes" id="antesBtn">&#10094;</button>
+            <button class="btn-nav depois" id="depoisBtn">&#10095;</button>
+        </div>
+
         <div class="second-background">
             <section class="topico container" id="problema">
 
@@ -183,7 +205,7 @@
     <footer class="footer">
         <div class="novidade container">
             <h2>Quer receber novidades?</h2>
-            <p>insira seu gmail abaixo para receber quaisquer novidades sobre o projeto.</p>
+            <p>Insira seu email abaixo para receber quaisquer novidades sobre o projeto.</p>
             <form action="#" class="formulario">
                 <input type="email" required placeholder="Insira seu email" class="gmail">
                 <button type="submit" id="submit">ENVIAR</button>

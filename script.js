@@ -119,49 +119,34 @@ const perguntasQuiz = [
     }
 ];
 
-//criando váriaveis para contagem
 let perguntaAtualIndex = 0;
 let pontuacao = 0;
 
-// linka o html com js
 const perguntaElemento = document.getElementById("pergunta-atual");
 const opcoesContainer = document.getElementById("opcoes-container");
 const btnProxima = document.getElementById("btn-proxima");
 const resultadoFinal = document.getElementById("resultado-final");
 
 function carregarPerguntas(){
-    //cria a variavel questao e atribui o array a ela
     const questao = perguntasQuiz[perguntaAtualIndex];
-    //entra no objeto da pergunta atual e pega apenas o texto que esta na chave pergunta 
     perguntaElemento.innerText = questao.pergunta;
-    //limpa o qu estiver na div
     opcoesContainer.innerHTML = "";
 
-    //percorrer a lista
     questao.opcoes.forEach((opcao,index) => {
-        //criar botao de resposta
         const botao = document.createElement("button");
-        //coloca altertnativa dentro do botão
         botao.innerText = opcao;
-        //add classe ao botão
         botao.classList.add("btn-opcao")
-        //quando clicar chamar função verificarResposta
         botao.onclick = () => verificarResposta(index);
-        //coloca as opcoes dentro da div
         opcoesContainer.appendChild(botao);
     });
 };
 
 function verificarResposta(indexSelecionado){
-    // guarda a alternativa correta
     const correta = perguntasQuiz[perguntaAtualIndex].correta;
-    // seleciona todos os botões e guarda numa nodelist
     const botoes = document.querySelectorAll(".btn-opcao")
 
-    //desabilita botões para evitar cliques duplos
     botoes.forEach(b=>b.disabled = true);
 
-    //coloca cor verde para certo e vermelho para errado nas alternativas e pontuação
     if(indexSelecionado === correta){
         pontuacao++;
         botoes[indexSelecionado].style.backgroundColor = "#2a9d8f";
@@ -172,11 +157,9 @@ function verificarResposta(indexSelecionado){
         botoes[correta].style.backgroundColor = "#2a9d8f";
         botoes[correta].style.borderColor="#2a9d8f";
 
-        // Para o texto continuar branco e visível sobre o verde/vermelho
         botoes[indexSelecionado].style.color = '#ffffff';
         botoes[correta].style.color = '#ffffff';
     };
-    //habilita o botão que no html estava desabilitado
     btnProxima.style.display = "block";
 };
 
@@ -207,33 +190,28 @@ const slides = document.querySelectorAll(".slide");
 const antesBtn = document.getElementById("antesBtn");
 const depoisBtn = document.getElementById("depoisBtn");
 
-//contador
 let contSlide = 0;
 
-//função responsável por exibir o slide correto e escnder os outros
 function slideShow(index){
-    
-    //Lógica para o loop do carrossel
     if(index>=slides.length){
-        contSlide = 0; //se passar da última volta para a primeira
+        contSlide = 0; 
     }else if(index<0){
-        contSlide = slides.length -1; //se for menor que zero, vai para a ultima
+        contSlide = slides.length -1;
     }else{
-        contSlide = index; //caso contrário segue o fluxo normal
+        contSlide = index; 
     }
     
-    //move o slide
     const deslocamento = -contSlide * 100;
     carrossel.style.transform = `translateX(${deslocamento}%)`;
 }
 
 //Eventos de clique nos botões
 depoisBtn.addEventListener("click",()=>{
-    slideShow(contSlide+1); //avança 1 slide
+    slideShow(contSlide+1);
 });
 
 antesBtn.addEventListener("click",()=>{
-    slideShow(contSlide-1); //volta 1 slide
+    slideShow(contSlide-1);
 })
 
 slideShow(contSlide);
@@ -250,9 +228,7 @@ const botaoMudarCor = document.getElementById("btnMudar");
 botaoMudarCor.addEventListener("click", ()=>{
     mudarContador++;
 
-    //se passar de 3 cliques, reinicia
     if(mudarContador > 3){
-        //teve que colocar contador igual a 1 porque estava dando bug, ficando na mesma cor com dois cliques
         mudarContador = 1;
     }
 

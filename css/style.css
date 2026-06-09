@@ -10,7 +10,6 @@
     --background-color: #401717;
     --surface-color: #733224;
     --footer-background: #4c4c4c;
-    --text-color-primary: #F2B47E;
     --text-color-secondary: #D9814E;
 
     --font-family: "poppins", sans-serif;
@@ -32,7 +31,7 @@ body {
 
 a {
     font: var(--text-lg);
-    color: var(--text-color-primary);
+    color: var(--brand-color);
 }
 
 p {
@@ -110,7 +109,7 @@ header h2 {
 header p:first-of-type {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-color-primary);
+    color: var(--brand-color);
     max-width: 700px;
     margin-bottom: 1.5rem;
 }
@@ -145,9 +144,96 @@ header button:hover {
 }
 
 
-/* seção da main */
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    border-radius: 8px;
+}
 
-section{
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slides-carrossel {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    height: 500px;
+    object-fit: cover;
+}
+
+/*Estilo dos botões*/
+.btn-nav {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: var(--background-color);
+    font-size: 20px;
+    border: none;
+    background-color: var(--text-color-secondary);
+    z-index: 10;
+    border-radius: 0 5px 5px 0;
+}
+
+.antes {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.depois {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.btn-nav:hover {
+    background-color: var(--brand-color);
+}
+
+#btnMudar {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid var(--text-color-secondary);
+    box-shadow: none;
+    outline: none;
+
+    color: var(--brand-color) ;
+    font-family: var(--font-family) ;
+    font-size: 1rem ;
+    font-weight: 500 ;
+    text-transform: none;
+
+    padding: 10px 24px ;
+    border-radius: 6px ;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out ;
+
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+#btnMudar:hover {
+    background-color: var(--text-color-secondary) ;
+    color: var(--background-color) ;
+    border-color: var(--text-color-secondary) ;
+}
+
+
+
+section {
     scroll-margin-top: 200px;
 }
 
@@ -167,8 +253,8 @@ section{
 .texto {
     flex: 1;
     max-width: 40rem;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 
 }
@@ -190,6 +276,113 @@ section{
 .topico-inverso img:hover {
     transform: scale(1.05);
 }
+
+/* quiz */
+
+
+#quiz-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--surface-color);
+    border: 2px solid var(--text-color-secondary);
+    border-radius: 12px;
+    color: var(--brand-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Título do Quiz */
+#quiz-container h2 {
+    color: var(--brand-color);
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--text-color-secondary);
+    padding-bottom: 15px;
+}
+
+#pergunta-atual {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: var(--brand-color);
+}
+
+/* Container das Opções */
+#opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Botões de Opção */
+.btn-opcao {
+    background-color: transparent;
+    color: var(--brand-color);
+    border: 1px solid var(--text-color-secondary);
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+/* Efeito Hover nas Opções */
+.btn-opcao:hover:not(:disabled) {
+    background-color: var(--text-color-secondary);
+    color: var(--background-color);
+}
+
+/* Desabilitado (Depois de responder) */
+.btn-opcao:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Botão de Próxima Pergunta */
+#btn-proxima {
+    width: 100%;
+    background-color: var(--brand-color);
+    color: var(--background-color);
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.2s ease;
+}
+
+#btn-proxima:hover {
+    opacity: 0.9;
+}
+
+/* Tela de Resultado Final */
+#resultado-final {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#resultado-final h3 {
+    color: var(--brand-color);
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+#resultado-final p {
+    font-size: 1.2rem;
+    color: var(--text-color-secondary);
+}
+
 
 /* footer */
 
@@ -222,7 +415,7 @@ footer {
     width: 100%;
 }
 
-form button{
+form button {
     padding: 4px;
     border-radius: 8px;
     background-color: var(--brand-color);
@@ -261,9 +454,8 @@ form button{
 }
 
 
+
 /* resposividade (para celulares) */
-
-
 @media (max-width: 768px) {
 
     nav {
@@ -360,223 +552,21 @@ form button{
         gap: 0.5rem;
     }
 
-}
+    #quiz-container {
+        margin: 20px 10px;
+        padding: 20px;
+    }
 
-/* Container Principal do Quiz */
-#quiz-container {
-  max-width: 650px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #733224;
-  border: 2px solid #D9814E;
-  border-radius: 12px;
-  color: #F2B47E;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
-}
+    #quiz-container h2 {
+        font-size: 1.3rem;
+    }
 
-/* Título do Quiz */
-#quiz-container h2 {
-  color:#F2B47E;
-  text-align: center;
-  font-size: 1.6rem;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 1px solid #D9814E;
-  padding-bottom: 15px;
-}
+    #pergunta-atual {
+        font-size: 1.1rem;
+    }
 
-/* Texto da Pergunta Atual */
-#pergunta-atual {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  font-weight: 600;
-  color: #F2B47E;
-}
-
-/* Container das Opções */
-#opcoes-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Botões de Opção */
-.btn-opcao {
-  background-color: transparent;
-  color: #F2B47E;
-  border: 1px solid #D9814E;
-  padding: 14px 20px;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.2s ease-in-out;
-  font-weight: 500;
-}
-
-/* Efeito Hover nas Opções */
-.btn-opcao:hover:not(:disabled) {
-  background-color:#D9814E;
-  color:#401717;
-}
-
-/* Desabilitado (Depois de responder) */
-.btn-opcao:disabled {
-  cursor: not-allowed;
-  opacity: 0.8;
-}
-
-/* Botão de Próxima Pergunta */
-#btn-proxima {
-  width: 100%;
-  background-color:#F2B47E;
-  color: #401717;
-  border: none;
-  padding: 14px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 25px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: opacity 0.2s ease;
-}
-
-#btn-proxima:hover {
-  opacity: 0.9;
-}
-
-/* Tela de Resultado Final */
-#resultado-final {
-  text-align: center;
-  padding: 20px 0;
-}
-
-#resultado-final h3 {
-  color: #F2B47E;
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-}
-
-#resultado-final p {
-  font-size: 1.2rem;
-  color:  #D9814E;
-}
-
-/*  RESPONSIVIDADE */
-@media (max-width: 600px) {
-  #quiz-container {
-    margin: 20px 10px;
-    padding: 20px;
-  }
-
-  #quiz-container h2 {
-    font-size: 1.3rem;
-  }
-
-  #pergunta-atual {
-    font-size: 1.1rem;
-  }
-
-  .btn-opcao {
-    padding: 12px 16px;
-    font-size: 0.95rem;
-  }
-}
-
-/* Container SlideShow*/
-.slideshow-container{
-    width: 100%;
-    position:relative;
-    overflow:hidden;
-    border-radius:12px;
-}
-
-/* Esconder slides*/
-
-.slide{
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-/*Coloca todos os slides em uma única linha comprida */
-.slides-carrossel {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out; /* efeito escorregando*/
-}
-.slide img{
-    width: 100%;
-    display: block;
-    height: 500px;
-    object-fit: cover;
-}
-
-/*Estilo dos botões*/
-.btn-nav{
-    cursor:pointer;
-    position: absolute;
-    top: 50%;
-    transform:translateY(-50%);
-    width:auto;
-    padding:16px;
-    color:#401717;
-    font-size:20px;
-    border:none;
-    background-color:#D9814E;
-    z-index: 10; /* Garante que os botões fiquem na frente das imagens que estão deslizando */
-    border-radius:0 5px 5px 0;
-}
-
-.antes{
-    left:0;
-    border-radius:0 5px 5px 0;
-}
-
-.depois{
-    right:0;
-    border-radius:5px 0 0 5px;
-}
-
-.btn-nav:hover{
-    background-color:#F2B47E;
-}
-
-/*botão de mudar de cor*/
-#btnMudar {
-    /* Reset de botão porque esta com conflito*/
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: transparent !important;
-    border: 2px solid #D9814E !important; 
-    box-shadow: none;
-    outline: none;
-    
-    /* Cores e Fonte */
-    color: #F2B47E !important; 
-    font-family: var(--font-family) !important;
-    font-size: 1rem !important;
-    font-weight: 500 !important;
-    text-transform: none;
-    
-    /* Tamanho e Forma */
-    padding: 10px 24px !important;
-    border-radius: 6px !important;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out !important;
-    
-    /*Alinhamento no Menu*/
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0;
-}
-
-#btnMudar:hover {
-    background-color: #D9814E !important; /* Fundo laranja do quiz */
-    color: #401717 !important; /* Texto marrom escuro */
-    border-color: #D9814E !important;
+    .btn-opcao {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
 }

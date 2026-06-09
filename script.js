@@ -240,7 +240,8 @@ slideShow(contSlide);
 
 //Mudar cor de fundo
 //Array de cores
-const cores = ["#401717","#372400","#291f3b"];
+const cores = ["#401717","#201145","#011128"];
+const coresFundo = ["#733224","#332091","#0D2E4F"];
 let mudarContador = 0;
 
 //linkar com html
@@ -258,11 +259,14 @@ botaoMudarCor.addEventListener("click", ()=>{
     if (mudarContador === 1){
         //vai para a segunda cor
         document.documentElement.style.setProperty("--background-color", cores[1]);
+        document.documentElement.style.setProperty("--surface-color", coresFundo[1]);
     } else if (mudarContador==2){
      //muda para terceira cor
      document.documentElement.style.setProperty("--background-color", cores[2]);
+     document.documentElement.style.setProperty("--surface-color", coresFundo[2]);
     }else{
         //volta para a cor original
         document.documentElement.style.setProperty("--background-color", cores[0]);
+        document.documentElement.style.setProperty("--surface-color", coresFundo[0]);
     }
 });
